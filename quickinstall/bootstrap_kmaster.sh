@@ -9,7 +9,6 @@ echo "[TASK 2] Copy kube admin config to Vagrant user .kube directory"
 mkdir /home/vagrant/.kube
 cp /etc/kubernetes/admin.conf /home/vagrant/.kube/config
 chown -R vagrant:vagrant /home/vagrant/.kube
-echo 'source <(kubectl completion bash)' >> /home/vagrant/.bashrc
 
 # Deploy flannel network
 echo "[TASK 3] Deploy flannel network"
