@@ -7,7 +7,7 @@ Following the steps:
         
         vagrant box add --name demo/centos7 /tmp/CentOS-7-x86_64-Vagrant-1905_01.VirtualBox.box
 
-3. Execute the command `vagrant up`, then wait for about 10 minutes.  Do NOT use any corprate VPN proxy, which might slow down the progress.  There could be some errors/warning messages, and usually they are not true errors. 
+3. Execute the command `vagrant up`, then wait for about 10 minutes.  Do NOT use any corprate VPN proxy, which might slow down the progress.  There could be some errors/warning messages, and usually they are not true errors.  The kmaster and two kworkers will be provisioned sequentially, and after that, issue the command `vagrant status` to see the status of the three nodes, which should all be running. 
 
 4. Execute the command `vagrant ssh kmaster` to enter the shell.  Then you can use `kubectl` command. 
 
