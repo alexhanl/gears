@@ -1,6 +1,10 @@
 # Quick Kubernetes Installation on your laptop using vagrant
 
-Following the steps:
+## TL;DR;
+        vagrant up
+
+## Steps
+
 1. Install `vagrant` and `oracle virtual box`
 
 2. Download the `centos/7` box from the link: https://cloud.centos.org/centos/7/vagrant/x86_64/images/CentOS-7-x86_64-Vagrant-1905_01.VirtualBox.box, and then import it using command: 
