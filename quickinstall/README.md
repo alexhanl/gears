@@ -15,4 +15,6 @@
 5. Try to deploy a sample application by executing the command to test if the k8s cluster is working as expected. 
 
         kubectl apply -f /vagrant/hello-kubernetes.yaml
+
+6. Optionally, if you want to use calico instead of the default flannel, just open the Vagrantfile, uncomment the calico line, and comment the flannel line. 
     
