@@ -16,5 +16,5 @@
 
         kubectl apply -f /vagrant/hello-kubernetes.yaml
 
-6. Optionally, if you want to use calico instead of the default flannel, just open the Vagrantfile, uncomment the calico line, and comment the flannel line. 
+6. Optionally, if you want to use calico instead of the default flannel, just edit the Vagrantfile by uncommenting the calico line and commenting the flannel line. 
     
