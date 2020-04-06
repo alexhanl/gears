@@ -19,6 +19,25 @@ yum makecache
 echo "executing 2.4"
 yum install -y -q docker-ce-18.09.0 docker-ce-cli-18.09.0 --nogpgcheck
 
+mkdir /etc/docker
+
+# Setup daemon.
+cat > /etc/docker/daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2",
+  "storage-opts": [
+    "overlay2.override_kernel_check=true"
+  ]
+}
+EOF
+
+mkdir -p /etc/systemd/system/docker.service.d
+
 # Enable docker service
 echo "[TASK 3] Enable and start docker service"
 systemctl enable docker 
