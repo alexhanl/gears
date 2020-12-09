@@ -1,0 +1,28 @@
+apiVersion: run.tanzu.vmware.com/v1alpha1
+kind: TanzuKubernetesCluster
+metadata:
+  name: oa-staging-tkg01
+  namespace: oa
+spec:
+  topology:
+    controlPlane:
+      count: 1
+      class: guaranteed-small
+      storageClass: k8s-policy
+    workers:
+      count: 3
+      class: guaranteed-small
+      storageClass: k8s-policy
+  distribution:
+    version: v1.18
+  settings:
+    network:
+      cni:
+        name: antrea
+      services:
+        cidrBlocks: ["198.51.100.0/12"]
+      pods:
+        cidrBlocks: ["192.0.2.0/16"]
+    storage:
+      classes: ["k8s-policy"]  
+      defaultClass: k8s-policy
