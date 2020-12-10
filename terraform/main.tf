@@ -69,7 +69,13 @@ resource "vsphere_virtual_machine" "vm" {
         domain    = var.vm-domain
       }
 
-      network_interface {}
+      network_interface {
+        ipv4_address = "192.168.110.${220 + count.index}"
+        ipv4_netmask = 24
+      }
+
+      ipv4_gateway = "192.168.110.1"
+      dns_server_list = ["192.168.110.10"]
     }
   }
 }

@@ -38,4 +38,4 @@ vm-datastore = "map-vol"
 vm-network = "VM Network"
 
 # Linux virtual machine domain name
-vm-domain = "demo.local"
+vm-domain = "demo.corp.local"
